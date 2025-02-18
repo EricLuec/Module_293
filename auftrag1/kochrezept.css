@@ -1,6 +1,7 @@
 .titel {
-    color: red;
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
 }
 
 .rezept { 
@@ -9,6 +10,9 @@
     grid-gap: 20px; 
     border: 1px solid black; 
     border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+
 } 
 
 .inhaltsverzeichnis { 
@@ -42,4 +46,8 @@
 
 .kaesekuchen-bild {
     width: 50%;
+}
+
+#fname {
+    margin: 5%;
 }

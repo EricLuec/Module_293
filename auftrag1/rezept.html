@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kochrezept</title>
+    <title>Käsekuchen</title>
     <link rel="stylesheet" href="./kochrezept.css" />
   </head>
   <body>
     <div class="titel">
       <h1>Käsekuchen Rezept</h1>
       <h3>Eric Luecking</h3>
+      <p id="personindicator">Dieses Rezept reicht für 2 Personen</p>
+      <a href="https://www.swissmilk.ch/de/rezepte-kochideen/" class="mehrrezepte">Mehr Rezepte</a>
     </div>
-
     <div class="rezept">
       <div class="rezept-part">
-        <p class="inside-text">100g Mehl</p>
-        <p class="inside-text">100g Butter</p>
-        <p class="inside-text">100g Käse</p>
+        <p id="mehl" class="inside-text">100g Mehl</p>
+        <p id="butter" class="inside-text">100g Butter</p>
+        <p id="kaese" class="inside-text">100g Käse</p>
+        <input type="text" id="fname" name="fname" placeholder="Geben sie die Anzahl Personen ein">
       </div>
       <div class="rezept-part">
         <p class="inside-text">Mischung machen</p>
@@ -25,5 +27,9 @@
       </div>
       <a href="./galerie.html" class="bilderlink">Bildergalerie</a>
     </div>
+    <div id="demo">
+        
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
