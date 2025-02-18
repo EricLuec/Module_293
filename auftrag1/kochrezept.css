@@ -37,18 +37,21 @@
 
 .inside-text {
     margin-left: 5%;
+    margin-bottom: 2%;
 }
 
-.bilderlink {
-    margin-left: 90%;
+.mehrrezepte {
+    margin-left: 8%;
     margin-bottom: 10%;
 }
 
 .kaesekuchen-bild {
     width: 50%;
+    border-radius: 5px;
 }
 
 #fname {
     margin: 5%;
+    margin-left: 7%;
     width: 60%;
 }
