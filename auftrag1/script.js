@@ -1,5 +1,5 @@
-let input = document.querySelector("body");
-input.addEventListener("change", calc);
+let input = document.getElementById("calcButton");
+input.addEventListener("click", calc);
 
 function calc(e) {
     let startAnzahl = 100;
@@ -10,6 +10,3 @@ function calc(e) {
     document.getElementById("kaese").innerHTML = `${startAnzahl * multiplicatorValue}g Käse`;
     document.getElementById("personindicator").innerHTML = ` Dieses Rezept reicht für ${multiplicatorValue} Personen`;
 }
-    
-
-
