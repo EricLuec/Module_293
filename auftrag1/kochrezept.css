@@ -9,8 +9,22 @@
     grid-gap: 20px; 
     border: 1px solid black; 
     border-radius: 10px;
-    
 } 
+
+.inhaltsverzeichnis { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-gap: 10px; 
+    border: 1px solid black; 
+    border-radius: 10px;
+    margin-top: 20%;
+} 
+
+.inhaltsverzeichnis-text {
+    text-align: center;
+    margin: 2%;
+}
+
 .rezept-part { 
     margin: 30px; 
     border: 1px solid red; 
