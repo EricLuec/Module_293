@@ -58,4 +58,8 @@
 
 body {
     font-family: "Sofia", sans-serif;
-  }
+}
+
+.zutaten-table {
+    margin-left: 35%;
+}
