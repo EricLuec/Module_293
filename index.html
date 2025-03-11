@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Blog</title>
+    <title>Blog Startseite</title>
     <link rel="stylesheet" href="./blogpage/styles.css">
 </head>
-<body>
+<body onload="loadPosts()">
     <div class="container">
-        <h1>Mein Blog</h1>
-        <div class="form-container">
-            <label for="title">Titel:</label>
-            <input type="text" id="title" required>
-            <label for="content">Inhalt:</label>
-            <textarea id="content" required></textarea>
-            <label for="category">Kategorie:</label>
-            <select id="category">
-                <option value="Technologie">Technologie</option>
-                <option value="Reisen">Reisen</option>
-                <option value="Lifestyle">Lifestyle</option>
-            </select>
-            <button onclick="addPost()">Post erstellen</button>
-        </div>
-        <h2>Beiträge</h2>
+        <h1>Blog Startseite</h1>
+        
+        <label for="filter">Kategorie filtern:</label>
+        <select id="filter" onchange="filterPosts()">
+            <option value="Alle">Alle</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Reisen">Reisen</option>
+            <option value="Lifestyle">Lifestyle</option>
+        </select>
+
         <div id="posts"></div>
+
+        <a href="./blogpage/create.html" class="create-btn">Neuen Beitrag erstellen</a>
     </div>
     <script src="./blogpage/scripts.js"></script>
 </body>

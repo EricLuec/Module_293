@@ -14,20 +14,20 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1 {
     text-align: center;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 input, textarea, select, button {
     width: 100%;
     padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -37,6 +37,7 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -51,4 +52,19 @@ button:hover {
 .category {
     font-size: 0.9em;
     color: gray;
+}
+
+.create-btn, .back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.create-btn:hover, .back-btn:hover {
+    background-color: #0056b3;
 }

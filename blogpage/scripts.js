@@ -4,26 +4,45 @@ function addPost() {
     let category = document.getElementById('category').value;
 
     if (title && content) {
-        let post = document.createElement('div');
-        post.classList.add('post');
-        post.innerHTML = `
-            <h3>${title}</h3>
-            <p>${content}</p>
-            <p class='category'>Kategorie: ${category}</p>
-            <button class='delete-btn' onclick='deletePost(this)'>Löschen</button>
-        `;
-        post.setAttribute('data-category', category);
-        document.getElementById('posts').prepend(post);
+        let posts = JSON.parse(localStorage.getItem('posts')) || [];
+        let newPost = { title, content, category };
+        posts.unshift(newPost);
+        localStorage.setItem('posts', JSON.stringify(posts));
 
         document.getElementById('title').value = '';
         document.getElementById('content').value = '';
+
+        alert('Beitrag erfolgreich erstellt!');
+        window.location.href = 'index.html';
     } else {
         alert('Bitte alle Felder ausfüllen');
     }
 }
 
-function deletePost(button) {
-    button.parentElement.remove();
+function loadPosts() {
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    let postsContainer = document.getElementById('posts');
+    postsContainer.innerHTML = '';
+
+    posts.forEach(post => {
+        let postElement = document.createElement('div');
+        postElement.classList.add('post');
+        postElement.setAttribute('data-category', post.category);
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <p class='category'>Kategorie: ${post.category}</p>
+            <button class='delete-btn' onclick='deletePost("${post.title}")'>Löschen</button>
+        `;
+        postsContainer.appendChild(postElement);
+    });
+}
+
+function deletePost(title) {
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    posts = posts.filter(post => post.title !== title);
+    localStorage.setItem('posts', JSON.stringify(posts));
+    loadPosts();
 }
 
 function filterPosts() {
