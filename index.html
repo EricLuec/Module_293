@@ -1,142 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filmbibliothek</title>
-    <link rel="stylesheet" href="./auftrag2/styles.css" />
-  </head>
-  <body>
-    <h1>Meine Filmsammlung</h1>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Blog</title>
+    <link rel="stylesheet" href="./blogpage/styles.css">
+</head>
+<body>
     <div class="container">
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
-          alt="The Lion King"
-        />
-        <p>The Lion King (2008)</p>
-        <a href="https://www.netflix.com/de/title/70079583" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
-          alt="The Shawshank"
-        />
-        <p>The Shawshank (1999)</p>
-        <a href="https://www.netflix.com/de/title/20557937" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg"
-          alt="Tom and Jerry"
-        />
-        <p>Tom and Jerry (2014)</p>
-        <a href="https://www.netflix.com/de/title/80013752" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
-          alt="The Lion King"
-        />
-        <p>The Lion King (2008)</p>
-        <a href="https://www.netflix.com/de/title/70079583" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
-          alt="The Shawshank"
-        />
-        <p>The Shawshank (1999)</p>
-        <a href="https://www.netflix.com/de/title/20557937" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
-          alt="The Lion King"
-        />
-        <p>The Lion King (2008)</p>
-        <a href="https://www.netflix.com/de/title/70079583" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
-          alt="The Shawshank"
-        />
-        <p>The Shawshank (1999)</p>
-        <a href="https://www.netflix.com/de/title/20557937" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
-          alt="The Lion King"
-        />
-        <p>The Lion King (2008)</p>
-        <a href="https://www.netflix.com/de/title/70079583" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
-          alt="The Shawshank"
-        />
-        <p>The Shawshank (1999)</p>
-        <a href="https://www.netflix.com/de/title/20557937" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
+        <h1>Mein Blog</h1>
+        <div class="form-container">
+            <label for="title">Titel:</label>
+            <input type="text" id="title" required>
+            <label for="content">Inhalt:</label>
+            <textarea id="content" required></textarea>
+            <label for="category">Kategorie:</label>
+            <select id="category">
+                <option value="Technologie">Technologie</option>
+                <option value="Reisen">Reisen</option>
+                <option value="Lifestyle">Lifestyle</option>
+            </select>
+            <button onclick="addPost()">Post erstellen</button>
+        </div>
+        <h2>Beiträge</h2>
+        <div id="posts"></div>
     </div>
-
-    <!--
-    <h2>Alternative Ansicht (Flexbox)</h2>
-     
-    <div class="flex-container">
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg"
-          alt="The Lion King"
-        />
-        <p>The Lion King (2008)</p>
-        <a href="https://www.netflix.com/de/title/70079583" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg"
-          alt="The Shawshank"
-        />
-        <p>The Shawshank (1999)</p>
-        <a href="https://www.netflix.com/de/title/20557937" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-      <div class="movie">
-        <img
-          src="https://image.tmdb.org/t/p/w500/6KErczPBROQty7QoIsaa6wJYXZi.jpg"
-          alt="Tom and Jerry"
-        />
-        <p>Tom and Jerry (2014)</p>
-        <a href="https://www.netflix.com/de/title/80013752" target="_blank"
-          >Auf Netflix ansehen</a
-        >
-      </div>
-    </div>
-    //-->
-  </body>
+    <script src="./blogpage/scripts.js"></script>
+</body>
 </html>
