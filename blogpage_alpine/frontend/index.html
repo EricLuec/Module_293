@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Übersicht</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" x-data="postsApp()" x-init="init">
+        <header>
+            <h1>Blog</h1>
+            <a href="create.html">Neuen Post</a>
+        </header>
+
+        <template x-for="post in posts" :key="post.id">
+            <div class="post-card">
+                <h2 x-text="post.title"></h2>
+                <p x-text="post.content"></p>
+                <small x-text="post.date"></small>
+                <div style="margin-top: 10px;">
+                    <a :href="'edit.html?id=' + post.id">Bearbeiten</a>
+                    <a href="#" style="background:#dc3545;" @click.prevent="deletePost(post.id)">Löschen</a>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <script src="app.js"></script>
+</body>
+</html>

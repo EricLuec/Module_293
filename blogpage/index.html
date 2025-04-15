@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Startseite</title>
+    <link rel="stylesheet" href="./blogpage/styles.css">
+</head>
+<body onload="loadPosts()">
+    <div class="container">
+        <h1>Blog Startseite</h1>
+        
+        <label for="filter">Kategorie filtern:</label>
+        <select id="filter" onchange="filterPosts()">
+            <option value="Alle">Alle</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Reisen">Reisen</option>
+            <option value="Lifestyle">Lifestyle</option>
+        </select>
+
+        <div id="posts"></div>
+
+        <a href="./blogpage/create.html" class="create-btn">Neuen Beitrag erstellen</a>
+    </div>
+    <script src="./blogpage/scripts.js"></script>
+</body>
+</html>
