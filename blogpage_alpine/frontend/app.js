@@ -2,12 +2,20 @@ function postsApp() {
     return {
         posts: [],
         async fetchPosts() {
-            const res = await fetch('/api/posts');
-            this.posts = await res.json();
+            const res = await fetch('http://localhost:8000/api/posts');
+            const rawData = await res.json();
+            console.log("Daten empfangen:", rawData);
+            this.posts = rawData.map(p => ({
+                id: p._id,
+                title: p.title,
+                content: p.content,
+                date: new Date(p.date).toLocaleString()
+            }));
         },
+
         async deletePost(id) {
             if (confirm("Diesen Post wirklich löschen?")) {
-                await fetch(`/api/posts/${id}`, { method: 'DELETE' });
+                await fetch(`http://localhost:8000/api/posts/${id}`, { method: 'DELETE' });
                 this.fetchPosts();
             }
         },
@@ -22,7 +30,7 @@ function createPostForm() {
         title: '',
         content: '',
         async submitPost() {
-            await fetch('/api/posts', {
+            await fetch('http://localhost:8000/api/posts', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title: this.title, content: this.content })
