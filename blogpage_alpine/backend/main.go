@@ -1,16 +1,16 @@
 package main
 
 import (
-	"./controllers"
-	"./routes"
+	"blogapline/controllers"
+	"blogapline/routes"
 	"context"
 	"fmt"
-	"log"
-	"net/http"
-	"time"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"log"
+	"net/http"
+	"time"
 )
 
 func main() {

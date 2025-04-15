@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"blog-app/controllers"
+	"blogapline/controllers"
 	"github.com/gorilla/mux"
 )
 

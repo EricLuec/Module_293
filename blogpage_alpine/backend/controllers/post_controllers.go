@@ -1,16 +1,15 @@
 package controllers
 
 import (
-	"blog-app/models"
+	"blogapline/models"
 	"context"
 	"encoding/json"
-	"net/http"
-	"time"
-
+	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	"github.com/gorilla/mux"
+	"net/http"
+	"time"
 )
 
 var Client *mongo.Client
