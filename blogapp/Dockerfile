@@ -1,25 +1,14 @@
-FROM golang:1.24.2 AS builder
+FROM golang:1.21
 
 WORKDIR /app
 
 COPY backend/go.mod backend/go.sum ./
 RUN go mod download
 
-COPY backend/ ./backend
+COPY backend .
 
-# Ändere hier das Arbeitsverzeichnis
-WORKDIR /app/backend
-
-# Baue direkt aus dem Ordner mit main.go
-RUN go build -o /app/blogapp
-
-FROM debian:bullseye-slim
-
-WORKDIR /app
-
-COPY --from=builder /app/blogapp .
-COPY frontend/ ./frontend
+RUN go build -o main .
 
 EXPOSE 8080
 
-CMD ["./blogapp"]
+CMD ["./main"]

@@ -1,39 +1,59 @@
-function blogApp() {
-    return {
-        posts: [],
-        form: { id: '', title: '', content: '' },
+const form = document.getElementById("postForm");
+const postsDiv = document.getElementById("posts");
 
-        fetchPosts() {
-            fetch('/api/posts')
-                .then(res => res.json())
-                .then(data => this.posts = data)
-        },
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const title = document.getElementById("title").value.trim();
+    const content = document.getElementById("content").value.trim();
 
-        savePost() {
-            const method = this.form.id ? 'PUT' : 'POST'
-            const url = this.form.id ? `/api/posts/${this.form.id}` : '/api/posts'
+    if (!title || !content) return;
 
-            fetch(url, {
-                method,
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ title: this.form.title, content: this.form.content })
-            }).then(() => {
-                this.fetchPosts()
-                this.resetForm()
-            })
-        },
+    await fetch("/api/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, content })
+    });
 
-        editPost(post) {
-            this.form = { ...post, id: post.id.$oid || post.id }
-        },
+    form.reset();
+    loadPosts();
+});
 
-        deletePost(id) {
-            fetch(`/api/posts/${id}`, { method: 'DELETE' })
-                .then(() => this.fetchPosts())
-        },
+async function loadPosts() {
+    const res = await fetch("/api/posts");
+    const posts = await res.json();
+    postsDiv.innerHTML = "";
 
-        resetForm() {
-            this.form = { id: '', title: '', content: '' }
-        }
+    posts.forEach(post => {
+        const div = document.createElement("div");
+        div.className = "post";
+        div.innerHTML = `
+      <div class="actions">
+        <button onclick="editPost('${post.id}', '${post.title}', \`${post.content.replace(/`/g, "\\`")}\`)">✏️</button>
+        <button onclick="deletePost('${post.id}')">🗑️</button>
+      </div>
+      <h3>${post.title}</h3>
+      <p>${post.content}</p>
+    `;
+        postsDiv.appendChild(div);
+    });
+}
+
+async function deletePost(id) {
+    await fetch(`/api/posts/${id}`, { method: "DELETE" });
+    loadPosts();
+}
+
+function editPost(id, title, content) {
+    const newTitle = prompt("Neuer Titel:", title);
+    const newContent = prompt("Neuer Inhalt:", content);
+
+    if (newTitle && newContent) {
+        fetch(`/api/posts/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title: newTitle, content: newContent })
+        }).then(loadPosts);
     }
 }
+
+loadPosts();

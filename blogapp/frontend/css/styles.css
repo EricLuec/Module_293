@@ -1,20 +1,93 @@
 body {
-    font-family: sans-serif;
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
-input, textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-button {
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
-.post {
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+textarea {
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background-color: #005fc1;
+}
+
+.posts-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background: #fafafa;
+    padding: 20px;
+    border-left: 6px solid #0077ff;
+    border-radius: 6px;
+    position: relative;
+}
+
+.post h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.post p {
+    color: #555;
+}
+
+.post .actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.actions button {
+    margin-left: 5px;
+    background-color: #ddd;
+    color: #333;
+    font-size: 14px;
+}
+
+.actions button:hover {
+    background-color: #bbb;
 }
