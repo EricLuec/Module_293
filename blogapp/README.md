@@ -15,3 +15,11 @@ blogapp/
 │       └── app.js
 ├── Dockerfile
 └── docker-compose.yml
+
+
+```
+cd backend
+sudo docker-compose up --build
+```
+
+frontned port 3000
