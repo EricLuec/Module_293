@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Mein Portfolio</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="projekte.html">Projekte</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main x-data="{ selectedCategory: 'all' }">
+    <section>
+        <h2>Projekte</h2>
+        <div>
+            <button @click="selectedCategory = 'all'">Alle</button>
+            <button @click="selectedCategory = 'webdesign'">Webdesign</button>
+            <button @click="selectedCategory = 'branding'">Branding</button>
+            <button @click="selectedCategory = 'app'">App-Entwicklung</button>
+        </div>
+
+        <div class="projects-grid">
+            <div x-show="selectedCategory === 'all'" class="project-card">
+                <img src="images/project1.jpg" alt="Projekt 1">
+                <h3>Projekt 1</h3>
+                <p>Kurze Beschreibung des Projekts...</p>
+                <a href="projekt-detail.html#projekt1">Mehr erfahren</a>
+            </div>
+            <div x-show="selectedCategory === 'branding'" class="project-card">
+                <img src="images/project2.jpg" alt="Projekt 2">
+                <h3>Projekt 2</h3>
+                <p>Kurze Beschreibung des Projekts...</p>
+                <a href="projekt-detail.html#projekt2">Mehr erfahren</a>
+            </div>
+            <!-- Weitere Projekte hier hinzufügen -->
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Kontakt: info@meinportfolio.de</p>
+    <p>&copy; 2025 Mein Portfolio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.8.0/dist/cdn.min.js" defer></script>
+</body>
+</html>
