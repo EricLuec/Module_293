@@ -17,8 +17,7 @@
             <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
-</header>
-
+</header>   
 <main x-data="{ subject: '', message: '', success: false }">
     <section class="team">
         <h2>Unser Team</h2>
@@ -27,9 +26,7 @@
             <p>Name: Max Mustermann</p>
             <p>Position: Webentwickler</p>
         </div>
-        <!-- Weitere Teammitglieder hinzufügen -->
     </section>
-
     <section class="contact-form">
         <h2>Kontaktieren Sie uns</h2>
         <form @submit.prevent="success = true">
