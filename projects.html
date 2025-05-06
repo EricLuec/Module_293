@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KreativStudio | Projekte</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KreativStudio | Projekte</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js"></script>
 </head>
 <body>
     <header x-data="{ mobileMenuOpen: false }">
@@ -32,165 +32,95 @@
             </div>
         </div>
     </header>
+  <main>
+    <section class="projects-page-section">
+      <div class="container">
+        <h1 class="page-title">Unsere Projekte</h1>
 
-    <main>
-        <section class="projects-page-section">
-            <div class="container">
-                <h1 class="page-title">Unsere Projekte</h1>
-                
-                <div x-data="{ activeCategory: 'all' }">
-                    <div class="category-filter">
-                        <button class="filter-btn" :class="{ active: activeCategory === 'all' }" @click="activeCategory = 'all'">Alle</button>
-                        <button class="filter-btn" :class="{ active: activeCategory === 'webdesign' }" @click="activeCategory = 'webdesign'">Webdesign</button>
-                        <button class="filter-btn" :class="{ active: activeCategory === 'app' }" @click="activeCategory = 'app'">App Entwicklung</button>
-                        <button class="filter-btn" :class="{ active: activeCategory === 'branding' }" @click="activeCategory = 'branding'">Branding</button>
-                        <button class="filter-btn" :class="{ active: activeCategory === 'marketing' }" @click="activeCategory = 'marketing'">Marketing</button>
-                    </div>
-                    
-                    <div class="projects-grid">
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'webdesign'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="E-Commerce Website">
-                            <div class="project-info">
-                                <span class="project-tag tag-webdesign">Webdesign</span>
-                                <h3>E-Commerce Plattform</h3>
-                                <p>Moderne E-Commerce Lösung mit personalisierter Benutzeroberfläche.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'app'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8b3885?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Mobile App">
-                            <div class="project-info">
-                                <span class="project-tag tag-app">App Entwicklung</span>
-                                <h3>Fitness Tracker App</h3>
-                                <p>Innovative Mobile App zur Verfolgung von Fitnessaktivitäten.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'branding'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80" alt="Branding">
-                            <div class="project-info">
-                                <span class="project-tag tag-branding">Branding</span>
-                                <h3>Corporate Identity</h3>
-                                <p>Umfassendes Rebranding für ein Technologieunternehmen.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'marketing'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Marketing">
-                            <div class="project-info">
-                                <span class="project-tag tag-marketing">Marketing</span>
-                                <h3>Social Media Kampagne</h3>
-                                <p>Viraler Marketingauftritt für ein neues Produkt.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'webdesign'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Webdesign">
-                            <div class="project-info">
-                                <span class="project-tag tag-webdesign">Webdesign</span>
-                                <h3>Portfolio Website</h3>
-                                <p>Elegante Präsentation für einen Fotografen.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'app'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="App">
-                            <div class="project-info">
-                                <span class="project-tag tag-app">App Entwicklung</span>
-                                <h3>Rezept App</h3>
-                                <p>Koch-App mit personalisierten Ernährungsplänen.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'branding'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1567443024551-f3e3a7b9d41d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Branding">
-                            <div class="project-info">
-                                <span class="project-tag tag-branding">Branding</span>
-                                <h3>Restaurant Branding</h3>
-                                <p>Vollständiges Branding für ein gehobenes Restaurant.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'marketing'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Marketing">
-                            <div class="project-info">
-                                <span class="project-tag tag-marketing">Marketing</span>
-                                <h3>Influencer Kampagne</h3>
-                                <p>Strategische Zusammenarbeit mit Social Media Influencern.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'webdesign'" x-transition>
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Webdesign">
-                            <div class="project-info">
-                                <span class="project-tag tag-webdesign">Webdesign</span>
-                                <h3>Business Dashboard</h3>
-                                <p>Komplexes Dashboard für Unternehmensanalysen.</p>
-                                <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                            </div>
-                        </div>
-                    </div>
+        <div x-data="{ activeCategory: 'all' }">
+          <div class="category-filter">
+            <button class="filter-btn" :class="{ active: activeCategory === 'all' }" @click="activeCategory = 'all'">Alle</button>
+            <button class="filter-btn" :class="{ active: activeCategory === 'webdesign' }" @click="activeCategory = 'webdesign'">Webdesign</button>
+            <button class="filter-btn" :class="{ active: activeCategory === 'app' }" @click="activeCategory = 'app'">App Entwicklung</button>
+            <button class="filter-btn" :class="{ active: activeCategory === 'branding' }" @click="activeCategory = 'branding'">Branding</button>
+            <button class="filter-btn" :class="{ active: activeCategory === 'marketing' }" @click="activeCategory = 'marketing'">Marketing</button>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'webdesign'" x-transition>
+              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80" alt="E-Commerce Website">
+              <div class="project-info">
+                <span class="project-tag tag-webdesign">Webdesign</span>
+                <h3>E-Commerce Plattform</h3>
+                <p>Moderne E-Commerce Lösung mit personalisierter Benutzeroberfläche.</p>
+                <a href="project-detail.html?id=shopzone" class="project-link">Mehr erfahren</a>
+              </div>
+            </div>
+
+            <div class="project-card" x-show="activeCategory === 'all' || activeCategory === 'branding'" x-transition>
+              <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80" alt="Branding">
+              <div class="project-info">
+                <span class="project-tag tag-branding">Branding</span>
+                <h3>Startup Branding</h3>
+                <p>Markenidentität für ein neues Tech-Startup.</p>
+                <a href="project-detail.html?id=brandingx" class="project-link">Mehr erfahren</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>KreativStudio</h3>
+                <p>Wir gestalten digitale Erlebnisse, die begeistern und Ergebnisse liefern.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>KreativStudio</h3>
-                    <p>Wir gestalten digitale Erlebnisse, die begeistern und Ergebnisse liefern.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Schnelllinks</h3>
-                    <ul>
-                        <li><a href="index.html">Startseite</a></li>
-                        <li><a href="projects.html">Projekte</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">Impressum</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h3>Leistungen</h3>
-                    <ul>
-                        <li><a href="#">Webdesign</a></li>
-                        <li><a href="#">App Entwicklung</a></li>
-                        <li><a href="#">Branding</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Beratung</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Abonnieren Sie unseren Newsletter für Updates und Angebote.</p>
-                    <form class="footer-form">
-                        <input type="email" placeholder="Ihre E-Mail">
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+            <div class="footer-links">
+                <h3>Schnelllinks</h3>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="projects.html">Projekte</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+            <div class="footer-services">
+                <h3>Leistungen</h3>
+                <ul>
+                    <li><a href="#">Webdesign</a></li>
+                    <li><a href="#">App Entwicklung</a></li>
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Beratung</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Abonnieren Sie unseren Newsletter für Updates und Angebote.</p>
+                <form class="footer-form">
+                    <input type="email" placeholder="Ihre E-Mail">
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

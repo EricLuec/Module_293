@@ -1,0 +1,95 @@
+<!-- project-detail.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projekt Detail | KreativStudio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">KreativStudio</a>
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">Startseite</a>
+        <a href="projects.html" class="nav-link active">Projekte</a>
+        <a href="contact.html" class="nav-link">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail-section">
+      <div class="container project-detail-content">
+        <h1 class="page-title">Projektname</h1>
+        <span class="project-tag tag-webdesign">Kategorie</span>
+        <img class="project-detail-image" src="" alt="Projektbild" />
+        <div class="project-description"></div>
+        <div class="project-meta"></div>
+        <a href="projects.html" class="btn-back">← Zurück zu allen Projekten</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const projects = {
+      shopzone: {
+        title: "E-Commerce Plattform",
+        tag: "Webdesign",
+        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
+        description: `
+          <p>Dieses Projekt umfasst die Entwicklung einer modernen E-Commerce Plattform mit responsivem Design und Fokus auf Nutzerfreundlichkeit.</p>
+          <ul>
+            <li>✔ Produktfilter & Kategorisierung</li>
+            <li>✔ Zahlungsintegration mit Stripe</li>
+            <li>✔ Mobile-First Design</li>
+          </ul>
+        `,
+        technologies: "HTML, CSS, JavaScript, Stripe API",
+        duration: "3 Monate",
+        client: "ShopZone GmbH"
+      },
+      brandingx: {
+        title: "Startup Branding",
+        tag: "Branding",
+        image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80",
+        description: `
+          <p>Für das Startup BrandingX wurde ein vollständiges Markenkonzept entwickelt, inklusive Logo, Typografie, Farbwelt und Markenrichtlinien.</p>
+        `,
+        technologies: "Figma, Adobe Illustrator",
+        duration: "2 Monate",
+        client: "BrandingX AG"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+    const project = projects[projectId];
+
+    if (project) {
+      document.querySelector(".page-title").textContent = project.title;
+      document.querySelector(".project-tag").textContent = project.tag;
+      document.querySelector(".project-detail-image").src = project.image;
+      document.querySelector(".project-detail-image").alt = project.title;
+      document.querySelector(".project-description").innerHTML = project.description;
+      document.querySelector(".project-meta").innerHTML = `
+        <h3>Technologien</h3><p>${project.technologies}</p>
+        <h3>Projektdauer</h3><p>${project.duration}</p>
+        <h3>Kunde</h3><p>${project.client}</p>
+      `;
+    } else {
+      document.querySelector(".project-detail-content").innerHTML = "<p>Projekt nicht gefunden.</p>";
+    }
+  </script>
+</body>
+</html>
