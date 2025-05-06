@@ -1,122 +1,134 @@
-<!-- project-detail.html -->
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projekt Detail | KreativStudio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <header>
-    <div class="container header-container">
-      <a href="index.html" class="logo">KreativStudio</a>
-      <nav class="desktop-nav">
-        <a href="index.html" class="nav-link">Startseite</a>
-        <a href="projects.html" class="nav-link active">Projekte</a>
-        <a href="contact.html" class="nav-link">Kontakt</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="project-detail-section">
-      <div class="container project-detail-content">
-        <h1 class="page-title">Projektname</h1>
-        <span class="project-tag tag-webdesign">Kategorie</span>
-        <img class="project-detail-image" src="" alt="Projektbild" />
-        <div class="project-description"></div>
-        <div class="project-meta"></div>
-        <a href="projects.html" class="btn-back">← Zurück zu allen Projekten</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt Detail | KreativStudio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">KreativStudio</a>
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-link">Startseite</a>
+          <a href="projects.html" class="nav-link active">Projekte</a>
+          <a href="contact.html" class="nav-link">Kontakt</a>
+        </nav>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer>
-    <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+    <main>
+      <section class="project-detail-section">
+        <div class="container project-detail-content">
+          <h1 class="page-title">Projektname</h1>
+          <span class="project-tag tag-webdesign">Kategorie</span>
+          <img class="project-detail-image" src="" alt="Projektbild" />
+          <div class="project-description"></div>
+          <div class="project-meta"></div>
+          <a href="projects.html" class="btn-back"
+            >← Zurück zu allen Projekten</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    const projects = {
-  shopzone: {
-    title: "E-Commerce Plattform",
-    tag: "Webdesign",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
-    description: `<p>Shop-System mit responsivem Design, Warenkorb und Bezahlfunktion.</p>`,
-    technologies: "HTML, CSS, JavaScript, Stripe",
-    duration: "3 Monate",
-    client: "ShopZone GmbH"
-  },
-  designfolio: {
-    title: "Designer Portfolio",
-    tag: "Webdesign",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1374&q=80",
-    description: `<p>Individuelle Portfolio-Seite für UX/UI Designer mit Parallax-Scrolling.</p>`,
-    technologies: "React, Tailwind CSS",
-    duration: "1 Monat",
-    client: "Freelancer Lena H."
-  },
-  brandingx: {
-    title: "Startup Branding",
-    tag: "Branding",
-    image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80",
-    description: `<p>Markendesign inkl. Logoentwicklung, Farbpalette & Typografie.</p>`,
-    technologies: "Adobe Illustrator, Figma",
-    duration: "2 Monate",
-    client: "BrandingX AG"
-  },
-  fittrack: {
-    title: "Fitness Coach App",
-    tag: "App Entwicklung",
-    image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1374&q=80",
-    description: `<p>Trainingspläne, Timer & Fortschrittsanzeige für mobile Geräte.</p>`,
-    technologies: "Flutter, Firebase",
-    duration: "4 Monate",
-    client: "FitTrack UG"
-  },
-  socialboost: {
-    title: "Influencer Kampagne",
-    tag: "Marketing",
-    image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1374&q=80",
-    description: `<p>Geplante TikTok- & Instagram-Aktion für junge Zielgruppen.</p>`,
-    technologies: "Meta Ads, Influencer DB",
-    duration: "6 Wochen",
-    client: "Snackify GmbH"
-  },
-  seoboost: {
-    title: "SEO Booster",
-    tag: "Marketing",
-    image: "https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA",
-    description: `<p>SEO-Maßnahmen für Sichtbarkeit & Google-Ranking.</p>`,
-    technologies: "Ahrefs, Screaming Frog, Google Search Console",
-    duration: "3 Monate",
-    client: "Lokale Unternehmen"
-  }
-};
+    <script>
+      const projects = {
+        shopzone: {
+          title: "E-Commerce Plattform",
+          tag: "Webdesign",
+          image:
+            "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
+          description: `<p>Shop-System mit responsivem Design, Warenkorb und Bezahlfunktion.</p>`,
+          technologies: "HTML, CSS, JavaScript, Stripe",
+          duration: "3 Monate",
+          client: "ShopZone GmbH",
+        },
+        designfolio: {
+          title: "Designer Portfolio",
+          tag: "Webdesign",
+          image:
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1374&q=80",
+          description: `<p>Individuelle Portfolio-Seite für UX/UI Designer mit Parallax-Scrolling.</p>`,
+          technologies: "React, Tailwind CSS",
+          duration: "1 Monat",
+          client: "Freelancer Lena H.",
+        },
+        brandingx: {
+          title: "Startup Branding",
+          tag: "Branding",
+          image:
+            "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80",
+          description: `<p>Markendesign inkl. Logoentwicklung, Farbpalette & Typografie.</p>`,
+          technologies: "Adobe Illustrator, Figma",
+          duration: "2 Monate",
+          client: "BrandingX AG",
+        },
+        fittrack: {
+          title: "Fitness Coach App",
+          tag: "App Entwicklung",
+          image:
+            "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1374&q=80",
+          description: `<p>Trainingspläne, Timer & Fortschrittsanzeige für mobile Geräte.</p>`,
+          technologies: "Flutter, Firebase",
+          duration: "4 Monate",
+          client: "FitTrack UG",
+        },
+        socialboost: {
+          title: "Influencer Kampagne",
+          tag: "Marketing",
+          image:
+            "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1374&q=80",
+          description: `<p>Geplante TikTok- & Instagram-Aktion für junge Zielgruppen.</p>`,
+          technologies: "Meta Ads, Influencer DB",
+          duration: "6 Wochen",
+          client: "Snackify GmbH",
+        },
+        seoboost: {
+          title: "SEO Booster",
+          tag: "Marketing",
+          image:
+            "https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA",
+          description: `<p>SEO-Maßnahmen für Sichtbarkeit & Google-Ranking.</p>`,
+          technologies: "Ahrefs, Screaming Frog, Google Search Console",
+          duration: "3 Monate",
+          client: "Lokale Unternehmen",
+        },
+      };
 
-    const params = new URLSearchParams(window.location.search);
-    const projectId = params.get("id");
-    const project = projects[projectId];
+      const params = new URLSearchParams(window.location.search);
+      const projectId = params.get("id");
+      const project = projects[projectId];
 
-    if (project) {
-      document.querySelector(".page-title").textContent = project.title;
-      document.querySelector(".project-tag").textContent = project.tag;
-      document.querySelector(".project-detail-image").src = project.image;
-      document.querySelector(".project-detail-image").alt = project.title;
-      document.querySelector(".project-description").innerHTML = project.description;
-      document.querySelector(".project-meta").innerHTML = `
+      if (project) {
+        document.querySelector(".page-title").textContent = project.title;
+        document.querySelector(".project-tag").textContent = project.tag;
+        document.querySelector(".project-detail-image").src = project.image;
+        document.querySelector(".project-detail-image").alt = project.title;
+        document.querySelector(".project-description").innerHTML =
+          project.description;
+        document.querySelector(".project-meta").innerHTML = `
         <h3>Technologien</h3><p>${project.technologies}</p>
         <h3>Projektdauer</h3><p>${project.duration}</p>
         <h3>Kunde</h3><p>${project.client}</p>
       `;
-    } else {
-      document.querySelector(".project-detail-content").innerHTML = "<p>Projekt nicht gefunden.</p>";
-    }
-  </script>
-</body>
+      } else {
+        document.querySelector(".project-detail-content").innerHTML =
+          "<p>Projekt nicht gefunden.</p>";
+      }
+    </script>
+  </body>
 </html>

@@ -1,193 +1,184 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KreativStudio | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js"
+    ></script>
+  </head>
+  <body>
     <header x-data="{ mobileMenuOpen: false }">
-        <div class="container header-container">
-            <a href="index.html" class="logo">KreativStudio</a>
-            
-            <nav class="desktop-nav">
-                <a href="index.html" class="nav-link active">Startseite</a>
-                <a href="projects.html" class="nav-link">Projekte</a>
-                <a href="contact.html" class="nav-link">Kontakt</a>
-            </nav>
-            
-            <button id="mobile-menu-button" class="mobile-menu-button" @click="mobileMenuOpen = !mobileMenuOpen">
-                <i class="fas fa-bars"></i>
-            </button>
+      <div class="container header-container">
+        <a href="index.html" class="logo">KreativStudio</a>
+
+        <nav class="desktop-nav">
+          <a href="index.html" class="nav-link active">Startseite</a>
+          <a href="projects.html" class="nav-link">Projekte</a>
+          <a href="contact.html" class="nav-link">Kontakt</a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="mobile-menu-button"
+          @click="mobileMenuOpen = !mobileMenuOpen"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="mobile-menu"
+        :class="{'open': mobileMenuOpen}"
+        x-show="mobileMenuOpen"
+        x-transition
+      >
+        <div class="container mobile-menu-container">
+          <a href="index.html" class="mobile-nav-link">Startseite</a>
+          <a href="projects.html" class="mobile-nav-link">Projekte</a>
+          <a href="contact.html" class="mobile-nav-link">Kontakt</a>
         </div>
-        
-        <div id="mobile-menu" class="mobile-menu" :class="{'open': mobileMenuOpen}" x-show="mobileMenuOpen" x-transition>
-            <div class="container mobile-menu-container">
-                <a href="index.html" class="mobile-nav-link">Startseite</a>
-                <a href="projects.html" class="mobile-nav-link">Projekte</a>
-                <a href="contact.html" class="mobile-nav-link">Kontakt</a>
-            </div>
-        </div>
+      </div>
     </header>
-
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <h1>Wir gestalten digitale Erlebnisse</h1>
-                <p>Kreative Lösungen für Ihre Web- und Designprojekte</p>
-                <a href="#projects" class="btn btn-primary">Unsere Projekte</a>
-            </div>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2 class="section-title">Unsere neuesten Projekte</h2>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="E-Commerce Website">
-                        <div class="project-info">
-                            <span class="project-tag tag-webdesign">Webdesign</span>
-                            <h3>E-Commerce Plattform</h3>
-                            <p>Moderne E-Commerce Lösung mit personalisierter Benutzeroberfläche und sicherem Zahlungssystem.</p>
-                            <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8b3885?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Mobile App">
-                        <div class="project-info">
-                            <span class="project-tag tag-app">App Entwicklung</span>
-                            <h3>Fitness Tracker App</h3>
-                            <p>Innovative Mobile App zur Verfolgung von Fitnessaktivitäten mit integrierter Community.</p>
-                            <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1336&q=80" alt="Branding">
-                        <div class="project-info">
-                            <span class="project-tag tag-branding">Branding</span>
-                            <h3>Corporate Identity</h3>
-                            <p>Umfassendes Rebranding für ein Technologieunternehmen mit neuem Logo und Designsystem.</p>
-                            <a href="project-detail.html" class="project-link">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="projects-more">
-                    <a href="projects.html" class="btn btn-outline">Alle Projekte anzeigen</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="categories-section">
-            <div class="container">
-                <h2 class="section-title">Unsere Projektkategorien</h2>
-                
-                <div class="categories-grid">
-                    <a href="projects.html?category=webdesign" class="category-card">
-                        <div class="category-icon icon-webdesign">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3>Webdesign</h3>
-                        <p>Moderne Websites und Webanwendungen</p>
-                    </a>
-                    
-                    <a href="projects.html?category=app" class="category-card">
-                        <div class="category-icon icon-app">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>App Entwicklung</h3>
-                        <p>Mobile Lösungen für iOS und Android</p>
-                    </a>
-                    
-                    <a href="projects.html?category=branding" class="category-card">
-                        <div class="category-icon icon-branding">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Branding</h3>
-                        <p>Markenidentität und Corporate Design</p>
-                    </a>
-                    
-                    <a href="projects.html?category=marketing" class="category-card">
-                        <div class="category-icon icon-marketing">
-                            <i class="fas fa-bullhorn"></i>
-                        </div>
-                        <h3>Marketing</h3>
-                        <p>Digitale Marketingstrategien</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="newsletter-section">
-            <div class="container">
-                <h2>Bleiben Sie informiert</h2>
-                <p>Abonnieren Sie unseren Newsletter und erhalten Sie regelmäßige Updates über unsere neuesten Projekte und Angebote.</p>
-                
-                <form id="newsletter-form" class="newsletter-form" x-data="{ submitted: false }" @submit.prevent="submitted = true; setTimeout(() => submitted = false, 3000)">
-                    <input type="email" placeholder="Ihre E-Mail-Adresse" required>
-                    <button type="submit" class="btn btn-white">Abonnieren</button>
-                    <p x-show="submitted" class="form-success">Vielen Dank für Ihre Anmeldung!</p>
-                </form>
-                
-                <p class="newsletter-disclaimer">Wir respektieren Ihre Privatsphäre. Sie können sich jederzeit abmelden.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>KreativStudio</h3>
-                    <p>Wir gestalten digitale Erlebnisse, die begeistern und Ergebnisse liefern.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Schnelllinks</h3>
-                    <ul>
-                        <li><a href="index.html">Startseite</a></li>
-                        <li><a href="projects.html">Projekte</a></li>
-                        <li><a href="contact.html">Kontakt</a></li>
-                        <li><a href="#">Datenschutz</a></li>
-                        <li><a href="#">Impressum</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h3>Leistungen</h3>
-                    <ul>
-                        <li><a href="#">Webdesign</a></li>
-                        <li><a href="#">App Entwicklung</a></li>
-                        <li><a href="#">Branding</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Beratung</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Abonnieren Sie unseren Newsletter für Updates und Angebote.</p>
-                    <form class="footer-form">
-                        <input type="email" placeholder="Ihre E-Mail">
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
-            </div>
+    <main
+      x-data="{ projects: [] }"
+      x-init="projects = Object.entries(projectData)"
+    >
+      <section class="hero">
+        <div class="container hero-content">
+          <h1>Wir gestalten digitale Erlebnisse</h1>
+          <p>Kreative Lösungen für Ihre Web- und Designprojekte</p>
+          <a href="#projects" class="btn btn-primary">Unsere Projekte</a>
         </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <h2 class="section-title">Unsere neuesten Projekte</h2>
+
+          <div class="projects-grid">
+            <template x-for="[id, project] in projects" :key="id">
+              <div class="project-card">
+                <img :src="project.image" :alt="project.title" />
+                <div class="project-info">
+                  <span
+                    class="project-tag"
+                    :class="'tag-' + project.tag.toLowerCase().replace(' ', '')"
+                    x-text="project.tag"
+                  ></span>
+                  <h3 x-text="project.title"></h3>
+                  <p x-html="project.description"></p>
+                  <a :href="'project-detail.html?id=' + id" class="project-link"
+                    >Mehr erfahren</a
+                  >
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <div class="projects-more">
+            <a href="projects.html" class="btn btn-outline"
+              >Alle Projekte anzeigen</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <h3>KreativStudio</h3>
+            <p>
+              Wir gestalten digitale Erlebnisse, die begeistern und Ergebnisse
+              liefern.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Schnelllinks</h3>
+            <ul>
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="projects.html">Projekte</a></li>
+              <li><a href="contact.html">Kontakt</a></li>
+              <li><a href="#">Datenschutz</a></li>
+              <li><a href="#">Impressum</a></li>
+            </ul>
+          </div>
+          <div class="footer-services">
+            <h3>Leistungen</h3>
+            <ul>
+              <li><a href="#">Webdesign</a></li>
+              <li><a href="#">App Entwicklung</a></li>
+              <li><a href="#">Branding</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Beratung</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>Abonnieren Sie unseren Newsletter für Updates und Angebote.</p>
+            <form class="footer-form">
+              <input type="email" placeholder="Ihre E-Mail" />
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 KreativStudio GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+      </div>
     </footer>
-</body>
+    <script>
+      const projectData = {
+        shopzone: {
+          title: "E-Commerce Plattform",
+          tag: "Webdesign",
+          image:
+            "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
+          description:
+            "Moderne E-Commerce Lösung mit personalisierter Benutzeroberfläche und sicherem Zahlungssystem.",
+        },
+        fittrack: {
+          title: "Fitness Tracker App",
+          tag: "App",
+          image:
+            "https://images.unsplash.com/photo-1467232004584-a241de8b3885?auto=format&fit=crop&w=1469&q=80",
+          description:
+            "Innovative Mobile App zur Verfolgung von Fitnessaktivitäten mit integrierter Community.",
+        },
+        brandingx: {
+          title: "Corporate Identity",
+          tag: "Branding",
+          image:
+            "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1336&q=80",
+          description:
+            "Umfassendes Rebranding für ein Technologieunternehmen mit neuem Logo und Designsystem.",
+        },
+        socialboost: {
+          title: "Influencer Kampagne",
+          tag: "Marketing",
+          image:
+            "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1374&q=80",
+          description:
+            "Strategische Kampagne mit Influencer Reach und gezielter Zielgruppenansprache.",
+        },
+      };
+    </script>
+  </body>
 </html>
