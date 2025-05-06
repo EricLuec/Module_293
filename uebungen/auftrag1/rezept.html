@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Käsekuchen</title>
+    <link rel="stylesheet" href="./kochrezept.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  </head>
+  <body>
+    <div class="titel">
+      <h1>Käsekuchen Rezept</h1>
+      <h3>Eric Luecking</h3>
+      <p id="personindicator">Dieses Rezept reicht für 2 Personen</p>
+      <img
+        src="/auftrag1/bilder/kaesekuchen.jpg"
+        alt="kaesekuchen-bild"
+        class="kaesekuchen-bild"
+      />
+    </div>
+    <div class="rezept">
+      <div class="rezept-part">
+        <table class="zutaten-table">
+          <caption>Zutaten</caption>
+          <thead>
+            <tr>
+              <th>Menge</th>
+              <th>Zutat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>100g</th>  
+              <td>Butter</td>    
+            </tr>
+            <tr>
+              <th>200g</th>  
+              <td>Mehl</td>  
+            </tr>
+            <tr>
+              <th>1</th>  
+              <td>Ei</td>  
+            </tr>
+          </tbody>
+        </table> 
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Geben sie die Anzahl Personen ein"
+        />
+        <button id="calcButton">Calculate</button>
+      </div>
+      <div class="rezept-part">
+        <ul>
+          <li class="inside-text">Mischung machen</li>
+          <li class="inside-text">Ofen 200 Grad</li>
+          <li class="inside-text">10 min</li>
+        </ul>
+        <a
+          href="https://www.swissmilk.ch/de/rezepte-kochideen/"
+          class="mehrrezepte"
+          >Mehr Rezepte</a
+        >
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
