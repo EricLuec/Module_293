@@ -43,34 +43,61 @@
 
   <script>
     const projects = {
-      shopzone: {
-        title: "E-Commerce Plattform",
-        tag: "Webdesign",
-        image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
-        description: `
-          <p>Dieses Projekt umfasst die Entwicklung einer modernen E-Commerce Plattform mit responsivem Design und Fokus auf Nutzerfreundlichkeit.</p>
-          <ul>
-            <li>✔ Produktfilter & Kategorisierung</li>
-            <li>✔ Zahlungsintegration mit Stripe</li>
-            <li>✔ Mobile-First Design</li>
-          </ul>
-        `,
-        technologies: "HTML, CSS, JavaScript, Stripe API",
-        duration: "3 Monate",
-        client: "ShopZone GmbH"
-      },
-      brandingx: {
-        title: "Startup Branding",
-        tag: "Branding",
-        image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80",
-        description: `
-          <p>Für das Startup BrandingX wurde ein vollständiges Markenkonzept entwickelt, inklusive Logo, Typografie, Farbwelt und Markenrichtlinien.</p>
-        `,
-        technologies: "Figma, Adobe Illustrator",
-        duration: "2 Monate",
-        client: "BrandingX AG"
-      }
-    };
+  shopzone: {
+    title: "E-Commerce Plattform",
+    tag: "Webdesign",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1374&q=80",
+    description: `<p>Shop-System mit responsivem Design, Warenkorb und Bezahlfunktion.</p>`,
+    technologies: "HTML, CSS, JavaScript, Stripe",
+    duration: "3 Monate",
+    client: "ShopZone GmbH"
+  },
+  designfolio: {
+    title: "Designer Portfolio",
+    tag: "Webdesign",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1374&q=80",
+    description: `<p>Individuelle Portfolio-Seite für UX/UI Designer mit Parallax-Scrolling.</p>`,
+    technologies: "React, Tailwind CSS",
+    duration: "1 Monat",
+    client: "Freelancer Lena H."
+  },
+  brandingx: {
+    title: "Startup Branding",
+    tag: "Branding",
+    image: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1374&q=80",
+    description: `<p>Markendesign inkl. Logoentwicklung, Farbpalette & Typografie.</p>`,
+    technologies: "Adobe Illustrator, Figma",
+    duration: "2 Monate",
+    client: "BrandingX AG"
+  },
+  fittrack: {
+    title: "Fitness Coach App",
+    tag: "App Entwicklung",
+    image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1374&q=80",
+    description: `<p>Trainingspläne, Timer & Fortschrittsanzeige für mobile Geräte.</p>`,
+    technologies: "Flutter, Firebase",
+    duration: "4 Monate",
+    client: "FitTrack UG"
+  },
+  socialboost: {
+    title: "Influencer Kampagne",
+    tag: "Marketing",
+    image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1374&q=80",
+    description: `<p>Geplante TikTok- & Instagram-Aktion für junge Zielgruppen.</p>`,
+    technologies: "Meta Ads, Influencer DB",
+    duration: "6 Wochen",
+    client: "Snackify GmbH"
+  },
+  seoboost: {
+    title: "SEO Booster",
+    tag: "Marketing",
+    image: "https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA",
+    description: `<p>SEO-Maßnahmen für Sichtbarkeit & Google-Ranking.</p>`,
+    technologies: "Ahrefs, Screaming Frog, Google Search Console",
+    duration: "3 Monate",
+    client: "Lokale Unternehmen"
+  }
+};
 
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get("id");
